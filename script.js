@@ -65,6 +65,7 @@ function segiEmpat(){
     let h = (b-a)/n;
 
     let luas = 0;
+    let langkah = "";
 
     let tabel = `
     <table>
@@ -86,6 +87,22 @@ function segiEmpat(){
 
         luas += fx;
 
+        langkah += `
+
+Iterasi ${i+1}
+
+<br>
+
+x = ${x}
+
+<br>
+
+f(${x}) = ${x}² = ${fx}
+
+<br><br>
+
+`;
+
         labels.push(
         x.toFixed(2));
 
@@ -103,6 +120,48 @@ function segiEmpat(){
 
     luas *= h;
 
+    langkah += `
+
+<hr>
+
+<b>Langkah 1</b>
+
+<br>
+
+Δx = (${b} - ${a}) / ${n}
+
+<br>
+
+Δx = ${h}
+
+<br><br>
+
+<b>Langkah 2</b>
+
+<br>
+
+Σf(x) = ${(
+luas/h).toFixed(4)}
+
+<br><br>
+
+<b>Langkah 3</b>
+
+<br>
+
+L = Δx × Σf(x)
+
+<br>
+
+L = ${h} × ${(
+luas/h).toFixed(4)}
+
+<br>
+
+L = ${luas.toFixed(4)}
+
+`;
+
     tabel += "</table>";
 
     document.getElementById(
@@ -117,6 +176,10 @@ function segiEmpat(){
     document.getElementById(
     "iterasiSegi").innerHTML =
     tabel;
+
+    document.getElementById(
+"langkahSegi").innerHTML =
+langkah;
 
 
     // Hapus grafik lama
