@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Metode Gauss-Seidel</title>
+
+    <link rel="icon" href="icon.png">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body class="metode-body">
+
+<div class="glass-metode">
+
+    <img src="icon.png" class="metode-logo" alt="Logo">
+
+    <h1>METODE GAUSS-SEIDEL</h1>
+
+    <p>Menyelesaikan Sistem Persamaan Linear</p>
+
+    <!-- Informasi Metode -->
+    <div class="info-metode">
+
+        <h3>📖 Tentang Metode</h3>
+
+        <p>
+            Metode Gauss-Seidel merupakan metode iterasi yang digunakan
+            untuk memperoleh solusi sistem persamaan linear secara bertahap
+            hingga mencapai nilai konvergen.
+        </p>
+
+        <table class="info-table">
+
+            <tr>
+                <th>Input</th>
+                <th>Keterangan</th>
+            </tr>
+
+            <tr>
+                <td>Matriks A</td>
+                <td>Koefisien Persamaan</td>
+            </tr>
+
+            <tr>
+                <td>Vektor B</td>
+                <td>Nilai Konstanta</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+    <!-- Petunjuk -->
+    <div class="petunjuk">
+
+        <b>Petunjuk Penggunaan</b>
+
+        <br><br>
+
+        Isi semua nilai matriks A dan vektor B,
+        kemudian tekan tombol <b>HITUNG</b>.
+
+    </div>
+
+    <h3 style="color:white;">Masukkan Matriks</h3>
+
+    <table class="matrix-table">
+
+<tr>
+
+    <th colspan="5">
+
+        Sistem Persamaan Linear
+
+    </th>
+
+</tr>
+
+<tr>
+
+    <td><input type="number" id="a11"></td>
+
+    <td><input type="number" id="a12"></td>
+
+    <td><input type="number" id="a13"></td>
+
+    <td>=</td>
+
+    <td><input type="number" id="b1"></td>
+
+</tr>
+
+<tr>
+
+    <td><input type="number" id="a21"></td>
+
+    <td><input type="number" id="a22"></td>
+
+    <td><input type="number" id="a23"></td>
+
+    <td>=</td>
+
+    <td><input type="number" id="b2"></td>
+
+</tr>
+
+<tr>
+
+    <td><input type="number" id="a31"></td>
+
+    <td><input type="number" id="a32"></td>
+
+    <td><input type="number" id="a33"></td>
+
+    <td>=</td>
+
+    <td><input type="number" id="b3"></td>
+
+</tr>
+
+</table>
+<div class="contoh">
+
+<b>Contoh Input</b>
+
+<br><br>
+
+10  -1   2  =  6
+
+<br>
+
+-1  11  -1  = 25
+
+<br>
+
+2   -1  10  = -11
+
+</div>
+<br>
+    <br><br>
+
+    <button onclick="gauss()">HITUNG</button>
+
+    <button onclick="resetGauss()">RESET</button>
+
+    <button onclick="location.href='dashboard.html'">KEMBALI</button>
+
+    <hr>
+
+    <h2 style="color:white;">
+
+        📊 HASIL PERHITUNGAN
+
+    </h2>
+
+    <div class="hasil-card">
+
+        <p id="hasilGauss">
+
+            Belum ada hasil.
+
+        </p>
+
+    </div>
+
+    <div id="iterasiGauss"></div>
+
+    <h3 style="color:white;">
+
+        Grafik Hasil Perhitungan
+
+    </h3>
+
+    <canvas id="grafikGauss"></canvas>
+
+    <div class="rumus">
+
+        <b>Rumus yang Digunakan</b>
+
+        <br><br>
+
+        x₁ = (b₁ − a₁₂x₂ − a₁₃x₃) / a₁₁
+
+        <br><br>
+
+        x₂ = (b₂ − a₂₁x₁ − a₂₃x₃) / a₂₂
+
+        <br><br>
+
+        x₃ = (b₃ − a₃₁x₁ − a₃₂x₂) / a₃₃
+
+    </div>
+
+</div>
+
+<footer>
+
+    © 2026 - Aplikasi Perhitungan Numerik
+
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Metode Segi Empat</title>
+
+    <link rel="icon" href="icon.png">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body class="metode-body">
+
+<div class="glass-metode">
+
+    <img src="icon.png" class="metode-logo">
+
+    <h1>METODE SEGI EMPAT</h1>
+
+    <p>
+        Menghitung pendekatan nilai integral menggunakan metode segi empat.
+    </p>
+    <div class="info-metode">
+
+    <h3>📖 Tentang Metode</h3>
+
+    <p>
+        Metode Segi Empat merupakan metode numerik yang digunakan untuk
+        menghitung nilai pendekatan integral dengan membagi daerah menjadi
+        beberapa pias berbentuk persegi panjang.
+    </p>
+
+    <table class="info-table">
+
+        <tr>
+            <th>Input</th>
+            <th>Keterangan</th>
+        </tr>
+
+        <tr>
+            <td>a</td>
+            <td>Batas bawah integral</td>
+        </tr>
+
+        <tr>
+            <td>b</td>
+            <td>Batas atas integral</td>
+        </tr>
+
+        <tr>
+            <td>n</td>
+            <td>Jumlah pias</td>
+        </tr>
+
+    </table>
+
+</div>
+<h3 style="color:white;">
+
+Masukkan Data
+
+</h3>
+
+    <input type="number" id="a" placeholder="Batas Bawah (a)">
+
+    <input type="number" id="b" placeholder="Batas Atas (b)">
+
+    <input type="number" id="n" placeholder="Jumlah Pias">
+
+    <button onclick="segiEmpat()">
+
+        HITUNG
+
+    </button>
+
+    <button onclick="resetSegi()">
+
+        RESET
+
+    </button>
+
+    <button onclick="location.href='dashboard.html'">
+
+        KEMBALI
+
+    </button>
+    <hr>
+
+<h2 style="color:white;">
+
+📊 HASIL PERHITUNGAN
+
+</h2>
+
+    <div class="hasil-card">
+
+        <p id="hasilSegi">Belum ada hasil.</p>
+
+    </div>
+
+    <div id="iterasiSegi"></div>
+
+    <h3 style="color:white;">
+Grafik Hasil Perhitungan
+</h3>
+
+<canvas id="grafikSegi"></canvas>
+
+<div class="rumus">
+
+    <b>Rumus yang Digunakan</b>
+
+    <br><br>
+
+    Luas = Σ f(x) × Δx
+
+    <br><br>
+
+    Δx = (b - a) / n
+
+</div>
+
+</div>
+
+<footer>
+
+© 2026 - Aplikasi Perhitungan Numerik
+
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

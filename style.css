@@ -1,0 +1,1325 @@
+/* =========================
+   ANIMASI
+========================= */
+
+.home-box,
+.login-box,
+.dashboard-box{
+
+    animation: muncul 1s;
+
+}
+
+@keyframes muncul{
+
+    from{
+
+        opacity:0;
+        transform:translateY(50px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+/* =========================
+   BODY
+========================= */
+
+body{
+
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.home-body,
+.login-body,
+.dashboard-body{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+
+    background:linear-gradient(
+        135deg,
+        #56ab2f,
+        #f9d423
+    );
+
+}
+
+/* =========================
+   BOX
+========================= */
+
+.home-box,
+.login-box,
+.dashboard-box{
+
+    width:700px;
+
+    padding:60px;
+
+    background:white;
+
+    border-radius:25px;
+
+    text-align:center;
+
+    box-shadow:0 12px 30px rgba(0,0,0,0.2);
+
+}
+
+/* =========================
+   JUDUL
+========================= */
+
+h1{
+
+    color:#3d9c24;
+
+    font-size:48px;
+
+    font-weight:900;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    text-shadow:2px 2px 6px rgba(0,0,0,0.15);
+
+    margin-bottom:30px;
+
+}
+
+h2{
+
+    color:#444;
+
+    font-size:22px;
+
+    margin-bottom:15px;
+
+}
+
+p{
+
+    color:#666;
+
+    font-size:18px;
+
+}
+
+/* =========================
+   INPUT
+========================= */
+
+input{
+
+    width:280px;
+
+    padding:12px;
+
+    margin:10px 0;
+
+    border:1px solid #ccc;
+
+    border-radius:10px;
+
+    font-size:16px;
+
+    box-shadow:0 2px 5px rgba(0,0,0,0.1);
+
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+button{
+
+    width:280px;
+
+    padding:14px;
+
+    margin-top:12px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#58b92d;
+
+    color:white;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+}
+
+button:hover{
+
+    background:#3d9c24;
+
+    transform:translateY(-3px);
+
+    box-shadow:0 8px 15px rgba(0,0,0,.2);
+
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    position:fixed;
+
+    bottom:15px;
+
+    width:100%;
+
+    text-align:center;
+
+    color:#555;
+
+    font-size:15px;
+
+}
+
+/* =========================
+   DASHBOARD
+========================= */
+
+.dashboard-box p{
+
+    margin:8px 0;
+
+}
+
+hr{
+
+    margin:20px 0;
+
+    border:1px solid #ddd;
+
+}
+
+footer{
+
+    position:fixed;
+
+    bottom:10px;
+
+    width:100%;
+
+    text-align:center;
+
+    color:#555;
+
+    font-size:14px;
+
+}
+
+.dashboard-box p{
+
+    font-size:18px;
+
+}
+
+.dashboard-box h2{
+
+    color:#3c9120;
+
+}
+
+.logo{
+
+    font-size:70px;
+
+    text-align:center;
+
+    margin-bottom:20px;
+
+    display:block;
+
+    animation:putar 2s infinite alternate;
+
+}
+
+@keyframes putar{
+
+    from{
+
+        transform:scale(1);
+
+    }
+
+    to{
+
+        transform:scale(1.1);
+
+    }
+
+}
+
+.info-card{
+
+    background:#f4f4f4;
+
+    padding:15px;
+
+    border-radius:15px;
+
+    margin:15px auto;
+
+    width:250px;
+
+    box-shadow:0 3px 10px rgba(0,0,0,.1);
+
+}
+
+.info-card h3{
+
+    margin:0;
+
+    color:#666;
+
+}
+
+.info-card h2{
+
+    margin-top:8px;
+
+    color:#3d9c24;
+
+}
+
+.info-card{
+
+    transition:.3s;
+
+}
+
+.info-card:hover{
+
+    transform:scale(1.05);
+
+}
+
+/*=============================
+        HALAMAN AWAL MODERN
+==============================*/
+
+.home-body{
+
+    margin:0;
+
+    font-family:Segoe UI,Arial,sans-serif;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    height:100vh;
+
+    background:
+    linear-gradient(135deg,#56ab2f,#f9d423);
+
+    overflow:hidden;
+
+}
+
+/* Glass */
+
+.glass{
+
+    width:700px;
+
+    padding:55px;
+
+    text-align:center;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.25);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.4);
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.2);
+
+    animation:muncul 1s;
+
+}
+
+/* Logo */
+
+.logo{
+
+    width:120px;
+
+    height:120px;
+
+    display:block;
+
+    margin:0 auto 25px auto;
+
+    object-fit:contain;
+
+}
+
+.logo:hover{
+
+    transform:rotate(10deg) scale(1.08);
+
+}
+
+/* Judul */
+
+.glass h1{
+
+    color:white;
+
+    font-size:55px;
+
+    font-weight:900;
+
+    margin:10px 0;
+
+    line-height:1.1;
+
+    text-shadow:
+    3px 3px 8px rgba(0,0,0,.3);
+
+}
+
+/* Sub Judul */
+
+.glass h2{
+
+    color:white;
+
+    margin-top:25px;
+
+    font-size:26px;
+
+}
+
+/* Deskripsi */
+
+.glass p{
+
+    color:white;
+
+    font-size:19px;
+
+    margin-bottom:35px;
+
+}
+
+/* Tombol */
+
+.glass button{
+
+    width:320px;
+
+    height:60px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:white;
+
+    color:#3c9d27;
+
+    font-size:20px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    box-shadow:
+    0 8px 20px rgba(0,0,0,.25);
+
+}
+
+.glass button:hover{
+
+    transform:translateY(-5px);
+
+    background:#3d9c24;
+
+    color:white;
+
+}
+
+/* Footer */
+
+footer{
+
+    position:fixed;
+
+    bottom:20px;
+
+    width:100%;
+
+    text-align:center;
+
+    color:white;
+
+    font-size:17px;
+
+}
+
+/*=============================
+        LOGIN MODERN
+==============================*/
+
+.login-body{
+
+    margin:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    height:100vh;
+
+    background:linear-gradient(135deg,#56ab2f,#f9d423);
+
+}
+
+.glass-login{
+
+    width:450px;
+
+    padding:45px;
+
+    text-align:center;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,.25);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.4);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+
+    animation:muncul 1s;
+
+}
+
+.logo-login{
+
+    width:90px;
+
+    margin-bottom:10px;
+
+}
+
+.glass-login h1{
+
+    color:white;
+
+    font-size:42px;
+
+    margin-bottom:10px;
+
+}
+
+.glass-login p{
+
+    color:white;
+
+    margin-bottom:25px;
+
+}
+
+.glass-login input{
+
+    width:90%;
+
+    padding:15px;
+
+    margin:10px 0;
+
+    border:none;
+
+    border-radius:12px;
+
+    font-size:16px;
+
+    outline:none;
+
+}
+
+.glass-login button{
+
+    width:95%;
+
+    padding:15px;
+
+    margin-top:15px;
+
+    border:none;
+
+    border-radius:40px;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.glass-login button:hover{
+
+    transform:translateY(-3px);
+
+}
+
+.btn-kembali{
+
+    background:white;
+
+    color:#3d9c24;
+
+}
+
+.btn-kembali:hover{
+
+    background:#eeeeee;
+
+}
+
+/* ===========================
+      DASHBOARD MODERN
+=========================== */
+
+.dashboard-body{
+
+    margin:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    height:100vh;
+
+    background:linear-gradient(135deg,#56ab2f,#f9d423);
+
+}
+
+.glass-dashboard{
+
+    width:500px;
+
+    padding:28px;
+
+    text-align:center;
+
+    background:rgba(255,255,255,.25);
+
+    backdrop-filter:blur(18px);
+
+    border-radius:25px;
+
+    border:1px solid rgba(255,255,255,.4);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.2);
+
+}
+
+.dashboard-logo{
+
+    width:70px;
+
+    display:block;
+
+    margin:0 auto 8px auto;
+
+}
+
+.glass-dashboard h1{
+
+    font-size:36px;
+
+    margin-bottom:8px;
+
+    color:white;
+
+}
+
+.dashboard-text{
+
+    color:white;
+
+    font-size:17px;
+
+    margin:5px 0 18px;
+
+}
+
+.info-dashboard{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:12px;
+
+    margin-bottom:18px;
+
+}
+
+.card-info{
+
+    width:145px;
+
+    padding:12px;
+
+    border-radius:15px;
+
+}
+.card-info h3{
+
+    margin:0;
+
+    color:#666;
+
+    font-size:17px;
+
+}
+
+.card-info span{
+
+    display:block;
+
+    margin-top:10px;
+
+    color:#3d9c24;
+
+    font-size:30px;
+
+    font-weight:bold;
+
+}
+
+.glass-dashboard h2{
+
+    color:white;
+
+    margin-bottom:20px;
+
+}
+
+.glass-dashboard button{
+
+    width:280px;
+
+    padding:14px;
+
+    margin:10px auto;
+
+    display:block;
+
+}
+.glass-dashboard button:hover{
+
+    transform:translateY(-3px);
+
+    background:#3d9c24;
+
+    color:white;
+
+}
+
+.logout{
+
+    margin-top:20px !important;
+
+    background:#ff4d4d !important;
+
+    color:white !important;
+
+}
+
+.logout:hover{
+
+    background:#d63031 !important;
+
+}
+/* ==========================
+     HALAMAN METODE
+========================== */
+
+.metode-body{
+
+    margin:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    min-height:100vh;
+
+    background:linear-gradient(135deg,#56ab2f,#f9d423);
+
+    padding:30px 0;
+
+}
+
+.glass-metode{
+
+    width:700px;
+
+    background:rgba(255,255,255,.25);
+
+    backdrop-filter:blur(18px);
+
+    border-radius:25px;
+
+    padding:35px;
+
+    text-align:center;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.2);
+
+}
+
+.metode-logo{
+
+    width:80px;
+
+    margin-bottom:10px;
+
+}
+
+.glass-metode h1{
+
+    color:white;
+
+    font-size:36px;
+
+}
+
+.glass-metode p{
+
+    color:white;
+
+}
+
+.glass-metode input{
+
+    width:90%;
+
+    padding:14px;
+
+    margin:10px 0;
+
+    border:none;
+
+    border-radius:12px;
+
+    font-size:16px;
+
+}
+
+.glass-metode button{
+
+    width:220px;
+
+    padding:14px;
+
+    margin:8px;
+
+    border:none;
+
+    border-radius:40px;
+
+    background:white;
+
+    color:#3d9c24;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.glass-metode button:hover{
+
+    background:#3d9c24;
+
+    color:white;
+
+    transform:translateY(-3px);
+
+}
+
+.hasil-card{
+
+    margin-top:30px;
+
+    padding:20px;
+
+    background:white;
+
+    border-radius:18px;
+
+    color:#333;
+
+}
+.glass-metode input{
+
+    width:130px;
+
+    margin:6px;
+
+}
+
+.hasil-card{
+
+    margin-top:25px;
+
+}
+
+canvas{
+
+    margin-top:20px;
+
+    background:white;
+
+    border-radius:15px;
+
+    padding:10px;
+
+}
+.petunjuk{
+
+    background:white;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    margin:20px 0;
+
+    color:#444;
+
+    font-size:15px;
+
+}
+/* ===========================
+        HASIL PERHITUNGAN
+=========================== */
+
+.hasil-card{
+
+    margin-top:25px;
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:20px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+
+}
+
+.hasil-card h3{
+
+    margin-top:0;
+
+    color:#3d9c24;
+
+}
+
+.hasil-card p{
+
+    color:#222;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+}
+table{
+
+    width:100%;
+
+    margin-top:20px;
+
+    border-collapse:collapse;
+
+    background:white;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+}
+
+table th{
+
+    background:#3d9c24;
+
+    color:white;
+
+    padding:12px;
+
+}
+
+table td{
+
+    padding:10px;
+
+    text-align:center;
+
+    border:1px solid #ddd;
+
+}
+
+table tr:nth-child(even){
+
+    background:#f4f4f4;
+
+}
+canvas{
+
+    width:100% !important;
+
+    max-height:350px;
+
+    margin-top:25px;
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:15px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+
+}
+.rumus{
+
+    margin-top:25px;
+
+    background:white;
+
+    padding:20px;
+
+    border-radius:15px;
+
+    text-align:left;
+
+    color:#333;
+
+    line-height:1.8;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+
+}
+/*==================================
+      PANEL INFORMASI
+==================================*/
+
+.info-metode{
+
+    margin:25px 0;
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:20px;
+
+    text-align:left;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+
+}
+
+.info-metode h3{
+
+    color:#3d9c24;
+
+    margin-top:0;
+
+}
+
+.info-metode p{
+
+    color:#444;
+
+    line-height:1.8;
+
+}
+
+/*=========================
+      TABEL INFO
+=========================*/
+
+.info-table{
+
+    width:100%;
+
+    margin-top:15px;
+
+    border-collapse:collapse;
+
+}
+
+.info-table th{
+
+    background:#3d9c24;
+
+    color:white;
+
+    padding:10px;
+
+}
+
+.info-table td{
+
+    padding:10px;
+
+    border:1px solid #ddd;
+
+}
+
+.info-table tr:nth-child(even){
+
+    background:#f8f8f8;
+
+}
+/*==========================
+        SIDEBAR
+===========================*/
+
+.container{
+
+    display:flex;
+
+    width:100%;
+
+    height:100vh;
+
+}
+
+.sidebar{
+
+    width:240px;
+
+    background:rgba(255,255,255,.2);
+
+    backdrop-filter:blur(15px);
+
+    padding:30px 20px;
+
+    box-shadow:4px 0 15px rgba(0,0,0,.15);
+
+}
+
+.sidebar-logo{
+
+    width:80px;
+
+    display:block;
+
+    margin:auto;
+
+}
+
+.sidebar h2{
+
+    text-align:center;
+
+    color:white;
+
+    margin-bottom:35px;
+
+}
+
+.sidebar a{
+
+    display:block;
+
+    text-decoration:none;
+
+    color:white;
+
+    font-size:18px;
+
+    padding:14px;
+
+    border-radius:12px;
+
+    margin-bottom:12px;
+
+    transition:.3s;
+
+}
+
+.sidebar a:hover{
+
+    background:white;
+
+    color:#3d9c24;
+
+}
+
+.content{
+
+    flex:1;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+}
+.card-menu{
+
+    background:rgba(255,255,255,.25);
+
+    backdrop-filter:blur(18px);
+
+    padding:40px;
+
+    border-radius:25px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.2);
+
+}
+
+.card-menu button{
+
+    display:block;
+
+    width:300px;
+
+    margin:15px auto;
+
+}
+/*=================================
+         MATRIX TABLE
+=================================*/
+
+.matrix-table{
+
+    width:100%;
+
+    margin:20px auto;
+
+    border-collapse:collapse;
+
+    background:white;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+
+}
+
+.matrix-table th{
+
+    background:#3d9c24;
+
+    color:white;
+
+    padding:15px;
+
+    font-size:18px;
+
+}
+
+.matrix-table td{
+
+    padding:12px;
+
+    border:1px solid #ddd;
+
+    text-align:center;
+
+}
+
+.matrix-table input{
+
+    width:75px;
+
+    padding:10px;
+
+    text-align:center;
+
+    margin:0;
+
+    border-radius:8px;
+
+    border:1px solid #ccc;
+
+}
+.info-table th:first-child,
+.info-table td:first-child{
+
+    width:25%;
+
+    text-align:center;
+
+}
+
+.info-table th:last-child,
+.info-table td:last-child{
+
+    width:75%;
+
+    text-align:left;
+
+}
