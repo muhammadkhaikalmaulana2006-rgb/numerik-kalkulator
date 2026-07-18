@@ -1323,3 +1323,24 @@ canvas{
     text-align:left;
 
 }
+
+#langkahSegi{
+
+    margin-top:20px;
+
+    background:white;
+
+    padding:20px;
+
+    border-radius:15px;
+
+    color:black;
+
+    text-align:left;
+
+    line-height:2;
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,.2);
+
+}
