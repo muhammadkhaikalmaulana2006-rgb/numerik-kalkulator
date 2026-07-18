@@ -1344,3 +1344,30 @@ canvas{
     0 5px 15px rgba(0,0,0,.2);
 
 }
+
+#langkahGauss{
+
+    margin-top:20px;
+
+}
+
+#langkahGauss .langkah{
+
+    background:white;
+
+    padding:20px;
+
+    border-radius:15px;
+
+    margin-bottom:20px;
+
+    color:black;
+
+    text-align:left;
+
+    line-height:2;
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,0.2);
+
+}
