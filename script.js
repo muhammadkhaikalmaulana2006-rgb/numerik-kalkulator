@@ -1,39 +1,82 @@
+//=====================
+// VARIABEL GRAFIK
+//=====================
+
 let chartSegi = null;
 let chartGauss = null;
 
+
+//=====================
+// LOGIN
+//=====================
+
+function login(){
+
+    let username =
+    document.getElementById("username").value;
+
+    let password =
+    document.getElementById("password").value;
+
+    if(username=="admin" &&
+       password=="admin"){
+
+        window.location.href="dashboard.html";
+
+    }
+
+    else{
+
+        alert(
+        "Username atau Password salah!"
+        );
+    }
+}
+
+
+//=====================
+// METODE SEGI EMPAT
+// f(x)=x²
+//=====================
+
 function segiEmpat(){
-    document.getElementById("hasilSegi").innerHTML =
-"Sedang menghitung...";
 
-    let a = Number(
-    document.getElementById("a").value);
+    document.getElementById(
+    "hasilSegi").innerHTML =
+    "Sedang menghitung...";
 
-    let b = Number(
-    document.getElementById("b").value);
+    let a =
+    Number(document.getElementById("a").value);
 
-    let n = Number(
-    document.getElementById("n").value);
+    let b =
+    Number(document.getElementById("b").value);
+
+    let n =
+    Number(document.getElementById("n").value);
 
     if(n<=0){
 
-    alert(
-    "Jumlah pias harus lebih dari 0");
+        alert(
+        "Jumlah pias harus lebih dari 0");
 
-    return;
-}
+        return;
+    }
 
     let h = (b-a)/n;
 
     let luas = 0;
 
     let tabel = `
-    <table border="1">
-    <tr>
-        <th>Iterasi</th>
-        <th>x</th>
-        <th>f(x)</th>
-    </tr>
+    <table>
+        <tr>
+            <th>Iterasi</th>
+            <th>x</th>
+            <th>f(x)</th>
+        </tr>
     `;
+
+    let labels = [];
+    let data = [];
 
     for(let i=0;i<n;i++){
 
@@ -43,11 +86,17 @@ function segiEmpat(){
 
         luas += fx;
 
+        labels.push(
+        x.toFixed(2));
+
+        data.push(
+        fx.toFixed(2));
+
         tabel += `
         <tr>
             <td>${i+1}</td>
-            <td>${x}</td>
-            <td>${fx}</td>
+            <td>${x.toFixed(2)}</td>
+            <td>${fx.toFixed(2)}</td>
         </tr>
         `;
     }
@@ -56,189 +105,284 @@ function segiEmpat(){
 
     tabel += "</table>";
 
-   document.getElementById("hasilSegi").innerHTML =
+    document.getElementById(
+    "hasilSegi").innerHTML =
 
-"✅ Perhitungan berhasil.<br><br>" +
+    "✅ Perhitungan berhasil<br><br>" +
 
-"Hasil = " + luas.toFixed(4);
+    "Hasil = " +
+
+    luas.toFixed(4);
 
     document.getElementById(
     "iterasiSegi").innerHTML =
     tabel;
 
-    let labels = [];
-let data = [];
 
-for(let i=0;i<n;i++){
+    // Hapus grafik lama
 
-    let x = a + (i*h);
+    if(chartSegi){
 
-    labels.push(x);
+        chartSegi.destroy();
 
-    data.push(x*x);
-}
-
-let ctx =
-document.getElementById(
-"grafikSegi");
-
-new Chart(ctx, {
-
-    type:'line',
-
-    data:{
-
-        labels:labels,
-
-        datasets:[{
-
-            label:'f(x)=x²',
-
-            data:data
-
-        }]
     }
-});
+
+    chartSegi = new Chart(
+
+        document.getElementById(
+        "grafikSegi"),
+
+        {
+
+            type:"line",
+
+            data:{
+
+                labels:labels,
+
+                datasets:[{
+
+                    label:"f(x)=x²",
+
+                    data:data,
+
+                    borderWidth:2
+
+                }]
+            }
+        }
+    );
 }
+
+
+//=====================
+// METODE GAUSS SEIDEL
+//=====================
 
 function gauss(){
-    document.getElementById("hasilGauss").innerHTML =
-"Sedang menghitung...";
 
-    if(
-document.getElementById(
-"a11").value==""
-){
+    document.getElementById(
+    "hasilGauss").innerHTML =
+    "Sedang menghitung...";
 
-    alert(
-    "Silakan isi semua matriks!");
 
-    return;
-}
+    let a11 =
+    Number(document.getElementById(
+    "a11").value);
+
+    let a12 =
+    Number(document.getElementById(
+    "a12").value);
+
+    let a13 =
+    Number(document.getElementById(
+    "a13").value);
+
+    let b1 =
+    Number(document.getElementById(
+    "b1").value);
+
+    let a21 =
+    Number(document.getElementById(
+    "a21").value);
+
+    let a22 =
+    Number(document.getElementById(
+    "a22").value);
+
+    let a23 =
+    Number(document.getElementById(
+    "a23").value);
+
+    let b2 =
+    Number(document.getElementById(
+    "b2").value);
+
+    let a31 =
+    Number(document.getElementById(
+    "a31").value);
+
+    let a32 =
+    Number(document.getElementById(
+    "a32").value);
+
+    let a33 =
+    Number(document.getElementById(
+    "a33").value);
+
+    let b3 =
+    Number(document.getElementById(
+    "b3").value);
+
 
     let x = 0;
     let y = 0;
     let z = 0;
 
-    let iterasi = "";
-
+    let labels = [];
     let dataX = [];
-    let dataY = [];
-    let dataZ = [];
 
-    for(let i=1;i<=5;i++){
+    let tabel = `
+    <table>
 
-        x = 1 + (i*0.1);
-        y = 2 + (i*0.1);
-        z = 3 + (i*0.1);
-
-        dataX.push(x);
-        dataY.push(y);
-        dataZ.push(z);
-
-        iterasi += `
         <tr>
+
+            <th>Iterasi</th>
+
+            <th>X</th>
+
+            <th>Y</th>
+
+            <th>Z</th>
+
+        </tr>
+    `;
+
+
+    for(let i=1;i<=10;i++){
+
+        x =
+
+        (b1-(a12*y)-(a13*z))
+        /a11;
+
+        y =
+
+        (b2-(a21*x)-(a23*z))
+        /a22;
+
+        z =
+
+        (b3-(a31*x)-(a32*y))
+        /a33;
+
+
+        labels.push(
+        "Iterasi "+i);
+
+        dataX.push(
+        x.toFixed(4));
+
+
+        tabel += `
+
+        <tr>
+
             <td>${i}</td>
-            <td>${x.toFixed(2)}</td>
-            <td>${y.toFixed(2)}</td>
-            <td>${z.toFixed(2)}</td>
+
+            <td>${x.toFixed(4)}</td>
+
+            <td>${y.toFixed(4)}</td>
+
+            <td>${z.toFixed(4)}</td>
+
         </tr>
         `;
     }
 
-    document.getElementById("hasilGauss").innerHTML =
+    tabel += "</table>";
 
-"✅ Perhitungan berhasil.<br><br>" +
 
-"X = " + x.toFixed(4) +
+    document.getElementById(
+    "hasilGauss").innerHTML =
 
-"<br>Y = " + y.toFixed(4) +
+    "✅ Perhitungan berhasil" +
 
-"<br>Z = " + z.toFixed(4);
+    "<br><br>" +
+
+    "X = " + x.toFixed(4) +
+
+    "<br>" +
+
+    "Y = " + y.toFixed(4) +
+
+    "<br>" +
+
+    "Z = " + z.toFixed(4);
+
 
     document.getElementById(
     "iterasiGauss").innerHTML =
+    tabel;
 
-    `
-    <table>
-        <tr>
-            <th>Iterasi</th>
-            <th>X</th>
-            <th>Y</th>
-            <th>Z</th>
-        </tr>
 
-        ${iterasi}
-    </table>
-    `;
+    // Hapus grafik lama
 
-    let ctx =
-    document.getElementById(
-    "grafikGauss");
+    if(chartGauss){
 
-    new Chart(ctx,{
+        chartGauss.destroy();
 
-        type:'line',
+    }
 
-        data:{
+    chartGauss = new Chart(
 
-            labels:[
-                "1","2","3","4","5"
-            ],
+        document.getElementById(
+        "grafikGauss"),
 
-            datasets:[
-                {
-                    label:'X',
-                    data:dataX
-                },
-                {
-                    label:'Y',
-                    data:dataY
-                },
-                {
-                    label:'Z',
-                    data:dataZ
-                }
-            ]
+        {
+
+            type:"line",
+
+            data:{
+
+                labels:labels,
+
+                datasets:[{
+
+                    label:
+                    "Konvergensi X",
+
+                    data:dataX,
+
+                    borderWidth:2
+
+                }]
+            }
         }
-    });
+    );
 }
 
-function login(){
 
-    let username = document.getElementById("username").value;
-    let password = document.getElementById("password").value;
-
-    if(username=="admin" && password=="admin"){
-
-        window.location.href="dashboard.html";
-
-    }
-
-    else{
-
-        alert("Username atau Password salah!");
-
-    }
-
-}
+//=====================
+// RESET SEGI EMPAT
+//=====================
 
 function resetSegi(){
 
-    document.getElementById("a").value="";
+    document.getElementById(
+    "a").value="";
 
-    document.getElementById("b").value="";
+    document.getElementById(
+    "b").value="";
 
-    document.getElementById("n").value="";
+    document.getElementById(
+    "n").value="";
 
-    document.getElementById("hasilSegi").innerHTML="Belum ada hasil.";
+    document.getElementById(
+    "hasilSegi").innerHTML=
 
-    document.getElementById("iterasiSegi").innerHTML="";
+    "Belum ada hasil.";
 
+    document.getElementById(
+    "iterasiSegi").innerHTML=
+    "";
+
+    if(chartSegi){
+
+        chartSegi.destroy();
+
+        chartSegi = null;
+    }
 }
+
+
+//=====================
+// RESET GAUSS
+//=====================
+
 function resetGauss(){
 
-    let id = [
+    let id=[
 
     "a11","a12","a13","b1",
 
@@ -250,12 +394,23 @@ function resetGauss(){
 
     for(let i=0;i<id.length;i++){
 
-        document.getElementById(id[i]).value="";
-
+        document.getElementById(
+        id[i]).value="";
     }
 
-    document.getElementById("hasilGauss").innerHTML="Belum ada hasil.";
+    document.getElementById(
+    "hasilGauss").innerHTML=
 
-    document.getElementById("iterasiGauss").innerHTML="";
+    "Belum ada hasil.";
 
+    document.getElementById(
+    "iterasiGauss").innerHTML=
+    "";
+
+    if(chartGauss){
+
+        chartGauss.destroy();
+
+        chartGauss = null;
+    }
 }
