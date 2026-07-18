@@ -220,7 +220,66 @@ function gauss(){
     let z = 0;
 
     let labels = [];
-    let dataX = [];
+
+let dataX = [];
+let dataY = [];
+let dataZ = [];
+
+    let langkah = "";
+
+for(let i=1;i<=10;i++){
+
+    let xBaru =
+    (b1-(a12*y)-(a13*z))/a11;
+
+    let yBaru =
+    (b2-(a21*xBaru)-(a23*z))/a22;
+
+    let zBaru =
+    (b3-(a31*xBaru)-(a32*yBaru))/a33;
+
+    langkah += `
+
+    <div class='langkah'>
+
+    <b>Iterasi ${i}</b>
+
+    <br><br>
+
+    X = (${b1} - (${a12}×${y.toFixed(4)}) -
+    (${a13}×${z.toFixed(4)})) / ${a11}
+
+    <br>
+
+    X = ${xBaru.toFixed(4)}
+
+    <br><br>
+
+    Y = (${b2} - (${a21}×${xBaru.toFixed(4)}) -
+    (${a23}×${z.toFixed(4)})) / ${a22}
+
+    <br>
+
+    Y = ${yBaru.toFixed(4)}
+
+    <br><br>
+
+    Z = (${b3} - (${a31}×${xBaru.toFixed(4)}) -
+    (${a32}×${yBaru.toFixed(4)})) / ${a33}
+
+    <br>
+
+    Z = ${zBaru.toFixed(4)}
+
+    </div>
+
+    <br>
+    `;
+
+    x = xBaru;
+    y = yBaru;
+    z = zBaru;
+}
 
     let tabel = `
     <table>
@@ -258,10 +317,16 @@ function gauss(){
 
 
         labels.push(
-        "Iterasi "+i);
+"Iterasi " + i);
 
-        dataX.push(
-        x.toFixed(4));
+dataX.push(
+Number(x.toFixed(4)));
+
+dataY.push(
+Number(y.toFixed(4)));
+
+dataZ.push(
+Number(z.toFixed(4)));
 
 
         tabel += `
@@ -305,6 +370,10 @@ function gauss(){
     "iterasiGauss").innerHTML =
     tabel;
 
+    document.getElementById(
+"langkahGauss").innerHTML =
+langkah;
+
 
     // Hapus grafik lama
 
@@ -316,31 +385,63 @@ function gauss(){
 
     chartGauss = new Chart(
 
-        document.getElementById(
-        "grafikGauss"),
+    document.getElementById(
+    "grafikGauss"),
 
-        {
+    {
 
-            type:"line",
+        type: "line",
 
-            data:{
+        data: {
 
-                labels:labels,
+            labels: labels,
 
-                datasets:[{
+            datasets: [
 
-                    label:
-                    "Konvergensi X",
+                {
+                    label: "X",
 
-                    data:dataX,
+                    data: dataX,
 
-                    borderWidth:2
+                    borderWidth: 2
+                },
 
-                }]
+                {
+                    label: "Y",
+
+                    data: dataY,
+
+                    borderWidth: 2
+                },
+
+                {
+                    label: "Z",
+
+                    data: dataZ,
+
+                    borderWidth: 2
+                }
+            ]
+        },
+
+        options: {
+
+            responsive: true,
+
+            plugins: {
+
+                title: {
+
+                    display: true,
+
+                    text:
+                    "Grafik Konvergensi Metode Gauss-Seidel"
+
+                }
             }
         }
-    );
-}
+    }
+);
 
 
 //=====================
@@ -413,4 +514,5 @@ function resetGauss(){
 
         chartGauss = null;
     }
+}
 }
